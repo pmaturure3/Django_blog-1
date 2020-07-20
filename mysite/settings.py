@@ -83,6 +83,7 @@ DATABASES = {
         'PASSWORD': 'sacema2020',
         'HOST': 'localhost',
         'PORT': '5432',
+       
     }
 }
 

@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+  body {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    background-color: #fdfdfd;
+  }
+
+  .head_text {
+    color: white;
+  }
+
+  .card {
+    box-shadow: 0 16px 48px #E3E7EB;
+  }
+</style>
+
+<header class="masthead">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class=" col-md-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h3 class=" site-heading my-4 mt-3 text-white"> Welcome to my awesome Blog </h3>
+          <p class="text-light">We Love Django As much as you do..! &nbsp home
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+
+    <!-- Blog Entries Column -->
+    <div class="col-md-8 mt-3 left">
+      {% for post in post_list %}
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">{{ post.title }}</h2>
+          <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+
+          <p class="card-text">{{post.content|slice:":200" }}</p>
+          <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+        </div>
+
+      </div>
+      {% endfor %}
+
+
+
+      <!-- home content goes here -->
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="py-3">
+        <div class="container">
+
+          <div class="row">
+
+            <div class="col-md-6">
+
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <div class="card p-4">
+                <div class="card-body">
+
+                  <b>Address</b>
+                  <p>376 hillcrest way</p>
+                  <p>Durban</p>
+                  <b>Email</b>
+                  <p>Info@simplygrown.me </p>
+                  <b>Phone</b>
+                  <p>031 000-0000</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card p-4">
+                <div class="card-body">
+                  <b class="text-center">Fill out this form to contact us</b>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="First Name">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Last Name">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Email">
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Phone Number">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <textarea class="form-control" placeholder="Message"></textarea>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input type="submit" value="Submit" class="btn btn-outline-danger btn-block">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- home content goes here -->
+    </div>
+    {% block sidebar %}
+    {% include 'sidebar.html' %}
+    {% endblock sidebar %}
+  </div>
+
+</div>
+{%endblock%}

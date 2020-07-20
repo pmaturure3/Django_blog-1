@@ -1,22 +1,52 @@
 {% block sidebar %}
 
 <style>
-        .card{
-            box-shadow: 0 16px 48px #E3E7EB;
-        }
-       
+    .card {
+        box-shadow: 0 16px 48px #E3E7EB;
+    }
 </style>
 
 <!-- Sidebar Widgets Column -->
 <div class="col-md-4 float-right ">
-<div class="card my-4">
-        <h5 class="card-header">About Us</h5>
-    <div class="card-body">
-        <p class="card-text"> This awesome blog is made on the top of our Favourite full stack Framework 'Django', follow up the tutorial to learn how we made it..!</p>
-        <a href="#"
-           class="btn btn-danger">Know more!</a>
+    <div class="card my-4">
+        <b class="card-header">About Us</b>
+        <div class="card-body">
+            <p class="card-text"> This awesome blog is made on the top of our Favourite full stack Framework 'Django', a
+                Python based framework,
+                follow up the tutorial to learn how we made it..!</p>
+            <a href="https://www.djangoproject.com/" class="btn btn-danger" target="_blank">Know more!</a>
+        </div>
     </div>
-</div>
+    <section id="lower_navbar" class="py-1">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+            <ul class="navbar-nav">
+
+                <!-- Subscribe -->
+                <li class="nav-item active">
+
+                    <a href="https://www.facebook.com/laoli.khonjwayo" class="btn btn-dark" role="button"
+                        aria-pressed="true" target="_blank">Facebook</a>
+                </li>
+
+                <!-- twitter page -->
+                <li class="nav-item active">
+
+                    <a href="
+          https://www.instagram.com/miss_laodi/
+          " target="_blank" class="btn btn-dark" role="button" aria-pressed="true">Instagram</a>
+                </li>
+                <!-- facebook -->
+
+                <li class="nav-item active">
+                    <a href="
+                    https://www.youtube.com/channel/UC-dVWXqKaQ7afUMWzaBV7lQ
+                    " target="_blank" class="btn btn-dark" role="button" aria-pressed="true">YouTube</a>
+                </li>
+
+
+            </ul>
+        </nav>
+    </section>
 </div>
 
 {% endblock sidebar %}
